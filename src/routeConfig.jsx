@@ -1,7 +1,7 @@
 import { createHashRouter } from 'react-router-dom'
 import Root from './routes/Root.jsx'
 import Home from "./routes/Home.jsx";
-import Toplist from "./routes/Toplist.jsx";
+import Toplist, { loader as booksloader } from "./routes/Toplist.jsx";
 import FindBook from "./routes/FindBook.jsx";
 import Favorites from "./routes/Favorites.jsx";
 import RegisterCard from "./routes/RegisterCard.jsx";
@@ -17,11 +17,14 @@ export const router = createHashRouter([
 		},
 		{
 			path: 'toplist',
-			element: <Toplist />
+			element: <Toplist />,
+			loader : booksloader,
 		},
 		{
 			path: 'find-book',
-			element: <FindBook />
+			element: <FindBook />,
+			loader : booksloader,
+
 		},
 		{
 			path: 'favorites',
